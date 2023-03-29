@@ -5,13 +5,13 @@
      <h3>Login</h3><br>
        
       
-      <input type="text" class="form-control" id="Username" name="username" placeholder="Enter Username"><br>
+      <input type="text" class="form-control" id="Username" name="username" [(ngModel)]="login.username" placeholder="Enter Username"><br>
 
        
-      <input type="text" class="form-control" id="Password" name="passswprd" placeholder="Enter Password"><br><br>
+      <input type="text" class="form-control" id="Password" name="passswprd" [(ngModel)]="login.password" placeholder="Enter Password"><br><br>
     
    
-      <button class="btn btn-primary">Submit</button>
+      <button class="btn btn-primary" (click)="loginIntoApp()">Submit</button>
     
   </form>
    
