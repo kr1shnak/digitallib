@@ -10,11 +10,20 @@
     border-radius: 50%;
 
    }
+   .user-img{
+    width: 50px;
+    height: 50px;
+    background:#ffffff;
+    border-radius: 50%;
+    margin: 10px
+
+   }
 
    .nav{
 
     align-items: center;
     margin-left: 200px;
+    width:800px
    }
 
    .logo-img{
@@ -25,7 +34,7 @@
     ul{
         li{
             list-style: none;
-            display: inline;
+            display: inline-block;
             padding: 15px;
             a{
                 text-decoration: none;
@@ -35,3 +44,6 @@
         }
 
     }
+
+
+    
