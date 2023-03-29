@@ -11,6 +11,8 @@ import { RigistrationComponent } from './rigistration/rigistration.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './components/common/header/header.component';
 import { FooterComponent } from './components/common/footer/footer.component';
+import { NewbookComponent } from './components/newbook/newbook.component';
+
 
 
 @NgModule({
@@ -23,7 +25,8 @@ import { FooterComponent } from './components/common/footer/footer.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RigistrationComponent
+    RigistrationComponent,
+    NewbookComponent
   ],
   imports: [
     BrowserModule,
