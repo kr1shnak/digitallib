@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { loginService } from 'src/app/services/login/login.service';
 
 
@@ -12,7 +13,7 @@ export class LoginComponent {
   title = 'Template driven forms';
 
  
-  constructor(private service:loginService){
+  constructor(private service:loginService, private route:Router){
 
   } 
   login = {
@@ -24,6 +25,7 @@ export class LoginComponent {
     this.service.getLoginDetails(this.login).subscribe((res: any)=>{
       console.log(res)
       localStorage.setItem('loginInfo',JSON.stringify(res))
+      this.route.navigate(['home']);
     })
   }
  

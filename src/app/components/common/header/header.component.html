@@ -10,7 +10,7 @@
                     <a href="home">Home</a>
                 </li>
 
-                <li>
+                <li *ngIf="!userInfo.username">
                     <a href="login">Login</a>
                 </li>
                 
@@ -23,7 +23,7 @@
                 <li>
                     <a href="contact">Contact</a>
                 </li>
-                <li >
+                <li *ngIf="!userInfo.username">
                     <a  href="/regiter">registration</a>
                 </li>
                  
