@@ -7,6 +7,7 @@ import { FooterComponent } from './components/common/footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RigistrationComponent } from './rigistration/rigistration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -15,14 +16,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RigistrationComponent
+    RigistrationComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
-  
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

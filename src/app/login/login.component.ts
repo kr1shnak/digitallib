@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { loginService } from '../services/login/login.service';
 
 
 @Component({
@@ -8,8 +10,9 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   title = 'Template driven forms';
+
  
-  constructor(){
+  constructor(private service:loginService){
 
   } 
   login = {
@@ -18,7 +21,10 @@ export class LoginComponent {
   }
   
   loginIntoApp(){
-    console.log(this.login)
+    this.service.getLoginDetails(this.login).subscribe((res: any)=>{
+      console.log(res)
+      localStorage.setItem('loginInfo',JSON.stringify(res))
+    })
   }
  
 }
