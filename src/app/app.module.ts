@@ -6,13 +6,14 @@ import { HomeComponent } from './components/home/home.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { LoginComponent } from './login/login.component';
-import { RigistrationComponent } from './rigistration/rigistration.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClientModule } from '@angular/common/http'
 import { HeaderComponent } from './components/common/header/header.component';
 import { FooterComponent } from './components/common/footer/footer.component';
 import { NewbookComponent } from './components/newbook/newbook.component';
+import { loginService } from './services/login/login.service';
+import { LoginComponent } from './components/login/login.component';
+import { RigistrationComponent } from './components/rigistration/rigistration.component';
 
 
 
@@ -36,7 +37,9 @@ import { NewbookComponent } from './components/newbook/newbook.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    loginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
