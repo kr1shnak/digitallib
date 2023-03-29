@@ -25,12 +25,22 @@
                 </li>
                 <li *ngIf="!userInfo.username">
                     <a  href="/regiter">registration</a>
+                
                 </li>
+                <li *ngIf="userInfo.username">
+                    <a  (click)="logout()">logout</a>
+                
+                </li>
+              
+           
                  
                
 
             </ul>
 
+        </div>
+        <div *ngIf="userInfo.username">
+            <img [src]="userInfo.image"  class="user-img" ><span>{{userInfo.username}}</span>
         </div>
 
 
