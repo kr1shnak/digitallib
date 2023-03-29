@@ -1,0 +1,21 @@
+<div>
+    <form [formGroup]="registrationform" class="registration-form" >
+        <h3 style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;"> REGISTRATION FORM</h3>
+
+        <input type="text" class=" form-control" id="fristname" placeholder=" frist name" formControlName="fristname"><br>
+
+         <input type="text " class="form-control" id="lastname"  placeholder=" last name " formControlName="lastname"><br>
+
+         <input type="text " class="form-control" id=" email " placeholder="email" formControlName="email"> <br>
+
+         <input type="password" class="form-control" placeholder="password"formControlName="password"><br>
+
+         <input type="password" class="form-control" placeholder="confirm password" formControlName="confirmpassword"><br>
+
+         <input type="date" class="form-control" id="date of birth" placeholder="date of birth" formControlName="dateofbirth"><br>
+
+         <button tyoe="Submit" class="btn btn-primary" (click)="regiser()"> Submit</button>
+        
+
+    </form>
+</div>
