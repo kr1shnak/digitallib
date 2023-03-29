@@ -1,19 +1,38 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { CartComponent } from './components/cart/cart.component';
+import { AboutComponent } from './components/about/about.component';
 import { LoginComponent } from './login/login.component';
 import { RigistrationComponent } from './rigistration/rigistration.component';
+import { NewbookComponent } from './components/newbook/newbook.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 const routes: Routes = [
-
+  {
+    path:'home',component:HomeComponent
+  },
+  {
+    path:'contact',component:ContactComponent
+  },
+  {
+    path:'about',component:AboutComponent
+  },
+  {
+    path:'cart',component:CartComponent
+  },
   {
     path:"regiter",component:RigistrationComponent,
   
   },
   {
     path:"login",component:LoginComponent
+  },
+  {
+    path:'newbook',component:NewbookComponent
   }
-];
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
