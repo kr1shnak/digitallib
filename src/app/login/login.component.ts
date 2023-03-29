@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { loginService } from '../services/login/login.service';
 
 
 @Component({
@@ -8,21 +10,22 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   title = 'Template driven forms';
+
  
-  countryList:country[] = [
-    new country("1", "India"),
-    new country('2', 'USA'),
-    new country('3', 'England')
-  ];
-}
- 
-export class country {
-  id:string;
-  name:string;
- 
-  constructor(id:string, name:string) {
-    this.id=id;
-    this.name=name;
+  constructor(private service:loginService){
+
+  } 
+  login = {
+    username:'',
+    password:''
   }
+  
+  loginIntoApp(){
+    this.service.getLoginDetails(this.login).subscribe((res: any)=>{
+      console.log(res)
+      localStorage.setItem('loginInfo',JSON.stringify(res))
+    })
+  }
+ 
 }
 
