@@ -1,2 +1,17 @@
-
-<p>THis is home</p>
+<div class="container pt-3">
+    <div class="row">
+        <div class="col-md-3 col-lg-3" *ngFor="let item of (books$ | async)?.products">
+            <div class="home-card">
+                <div class="imag-block">
+                    <img [src]="item.thumbnail" class="product-thumbnail">
+                </div>
+                <div class="product-info">
+                    <h3>{{item.title}}</h3>
+                    <h3>{{item.price | currency}}</h3>
+                    <p>{{item.category}}</p>
+                    <button class="btn btn-info">Add</button>
+                </div>
+            </div>
+        </div>
+      </div>
+ </div>

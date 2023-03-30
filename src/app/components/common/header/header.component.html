@@ -1,16 +1,17 @@
 <header class="app-header">
 
     <div class="d-flex flex-row">
-        <div>
+        <div class="logo-block">
             <img src="assets\images\logo2.png" class="logo-img">
         </div>
+        
         <div class="nav nav-bar">
             <ul>
                 <li>
                     <a href="home">Home</a>
                 </li>
 
-                <li *ngIf="!userInfo.username">
+                <li *ngIf="!userInfo?.username">
                     <a href="login">Login</a>
                 </li>
                 
@@ -23,11 +24,11 @@
                 <li>
                     <a href="contact">Contact</a>
                 </li>
-                <li *ngIf="!userInfo.username">
+                <li *ngIf="!userInfo?.username">
                     <a  href="/regiter">registration</a>
                 
                 </li>
-                <li *ngIf="userInfo.username">
+                <li *ngIf="userInfo?.username">
                     <a  (click)="logout()">logout</a>
                 
                 </li>
@@ -39,7 +40,7 @@
             </ul>
 
         </div>
-        <div *ngIf="userInfo.username">
+        <div *ngIf="userInfo?.username">
             <img [src]="userInfo.image"  class="user-img" ><span>{{userInfo.username}}</span>
         </div>
 
