@@ -21,16 +21,13 @@ export class RigistrationComponent {
      dateofbirth: new FormControl('')
     
   })
-  regiser(){
+  register(){
     console.log(this.registrationform.controls.fristname.value)
     console.log(this.registrationform.controls.lastname.value)
     console.log(this.registrationform.controls.email.value)
     console.log(this.registrationform.controls.password.value)
     console.log(this.registrationform.controls.confirmpassword.value)
     console.log(this.registrationform.controls.dateofbirth.value)
-    
-    
-    
   }
 
 }
