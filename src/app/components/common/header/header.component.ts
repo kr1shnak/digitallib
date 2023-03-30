@@ -9,7 +9,7 @@ import { NavigationStart, Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   
-  userInfo: any;
+userInfo: any;
   constructor(private route:Router){
     this.route.events.subscribe(() => {
         let user = localStorage.getItem('loginInfo')
@@ -28,3 +28,4 @@ export class HeaderComponent implements OnInit {
   }
 
 }
+ 
