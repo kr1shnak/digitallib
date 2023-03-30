@@ -14,6 +14,7 @@ import { NewbookComponent } from './components/newbook/newbook.component';
 import { loginService } from './services/login/login.service';
 import { LoginComponent } from './components/login/login.component';
 import { RigistrationComponent } from './components/rigistration/rigistration.component';
+import { AuthGuard } from './gaurds/auth.guard';
 
 
 
@@ -38,7 +39,8 @@ import { RigistrationComponent } from './components/rigistration/rigistration.co
     HttpClientModule
   ],
   providers: [
-    loginService
+    loginService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
