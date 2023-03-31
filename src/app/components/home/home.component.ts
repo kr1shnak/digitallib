@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { books, BooksInfo } from 'src/app/models/digitallib-model';
+import { BooksInfo } from 'src/app/models/digitallib-model';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
