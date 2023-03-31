@@ -8,7 +8,8 @@ export interface books {
     "stock": number,
     "brand": string,
     "category": string,
-    "thumbnail": string
+    "thumbnail": string,
+    //"images": [ ]
 }
 
 export interface BooksInfo
