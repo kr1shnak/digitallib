@@ -34,10 +34,9 @@
                     <a  href="/regiter">registration</a>
                 
                 </li>
-                <li *ngIf="userInfo?.username">
-                    <a  (click)="logout()">logout</a>
                 
-                </li>
+                
+               
               
            
                  
@@ -46,8 +45,28 @@
             </ul>
 
         </div>
-        <div *ngIf="userInfo?.username">
-            <img [src]="userInfo.image"  class="user-img" ><span>{{userInfo.username}}</span>
+        <div *ngIf="userInfo?.username"    
+            
+                 class="dropdown">
+                    
+                   
+                <img [src]="userInfo.image"   class="user-img"   >
+            <span>{{userInfo.username}} <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                      
+            </button>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="myprofile">my profile</a></li>
+                <li><a class="dropdown-item" href="mybookings">my bookings</a></li>
+
+                <li class="divider"></li>
+
+                <li *ngIf="userInfo?.username">
+                    <a  (click)="logout()">logout</a>
+                
+                </li>
+
+              </ul></span>
+       
         </div>
         <div class="cart-icon-header">
             <a  data-bs-toggle="dropdown" id="dropdownMenuButton" aria-expanded="false"><img src="assets/images/cart.png"  class="cart-img">
