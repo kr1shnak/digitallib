@@ -2,6 +2,43 @@
     
 <body class="home">
 <div id="home-page" class="container pt-3">
+    <!-- Carousel -->
+<!--
+  <table class="table table-bordered">
+        <tr *ngFor="let item of status">
+            <td [ngClass]="{'green': item == 'success','red':item == 'pending','blue':item == 'cancel','orange': item == 'return'}">{{item}}</td>
+        </tr>
+    </table>
+-->
+  
+<div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    </div>
+  
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+        <div *ngFor="let image of images; let i = index">
+            <div class="carousel-item" [ngClass]="{'active': i === 0}" >
+                <img [src]="image"  alt="Los Angeles" class="carousel-img">
+              </div>
+        </div>
+   
+    </div>
+  
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+  
     <div class="row">
         <div class="col-md-3 col-lg-3 p-4 product-block" *ngFor="let item of (books$ | async)?.products">
             <div class="home-card">
