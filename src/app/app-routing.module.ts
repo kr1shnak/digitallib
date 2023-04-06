@@ -9,6 +9,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RigistrationComponent } from './components/rigistration/rigistration.component';
 import { AuthGuard } from './gaurds/auth.guard';
 import { LoginGuard } from './gaurds/login.guard';
+import { NewsComponent } from './components/news/news.component';
 
 
 
@@ -37,7 +38,11 @@ const routes: Routes = [
   },
   {
     path:'newbook',component:NewbookComponent
-  }
+  },
+  {
+    path:'news',component:NewsComponent
+  },
+  
 ]
 
 @NgModule({

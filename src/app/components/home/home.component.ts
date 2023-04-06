@@ -26,7 +26,12 @@ export class HomeComponent implements OnInit{
     this.books$ = this.service.getProductList()
   }
 
-
+  addToCart(item:any):any{
+    item.qty = 1;
+    this.service.sendcart(item)
+  }
+    
+  
   
 
 }
