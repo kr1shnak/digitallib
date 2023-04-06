@@ -1,8 +1,8 @@
 
-<h3 class="text-center p-4" *ngIf="!minicart">Product Cart</h3>
+<h3 class="text-center p-4" *ngif="!minicart">Product Cart</h3>
 
 <table class="table table-bordered table striped">
-    <th >
+    <th *ngIf="!minicart">
         Product Img
     </th>
 <th>

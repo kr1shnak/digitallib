@@ -10,16 +10,18 @@ export class loginService{
  }
 
 getLoginDetails(login:any):any{
-
   return this.http.post("https://dummyjson.com/auth/login",login)
 }
 
-  IsloggedIn(){
-    let user =localStorage.getItem('loginInfo')
-    const status = (user) ? true: false;
-    console.log(status)
-     return status;
+IsloggedIn(): boolean{
+  let user = localStorage.getItem('loginInfo')
+  if(user){
+    return true
   }
+  else{
+    return false
+  }
+}
 
 }
 
