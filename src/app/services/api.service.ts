@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 
 
@@ -20,7 +20,7 @@ export class ApiService {
   constructor(private http:HttpClient) { }
 
 
-  getProductList() : any{
+  getProductList() : Observable<any>{
     return this.http.get('https://dummyjson.com/products')
   }
 
