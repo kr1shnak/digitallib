@@ -2,7 +2,7 @@
 
     <div class="d-flex flex-row">
         <div class="logo-block">
-            <img src="assets/images/logo2.png" class="logo-img">
+            <img src="assets/images/li.png" class="logo-img">
         </div>
         
         <div class="nav nav-bar">
@@ -20,6 +20,9 @@
                 
                 <li *ngIf="userInfo?.username">
                     <a href="cart">Cart</a>
+                </li>
+                <li>
+                    <a href="news">News</a>
                 </li>
                 <li>
                     <a href="about">About</a>
@@ -45,6 +48,13 @@
         </div>
         <div *ngIf="userInfo?.username">
             <img [src]="userInfo.image"  class="user-img" ><span>{{userInfo.username}}</span>
+        </div>
+        <div class="cart-icon-header">
+            <a  data-bs-toggle="dropdown" id="dropdownMenuButton" aria-expanded="false"><img src="assets/images/cart.png"  class="cart-img">
+            <sup class="cart-length">{{cartListInfo?.length}}</sup></a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <app-mini-cart></app-mini-cart>
+            </div> 
         </div>
 
 

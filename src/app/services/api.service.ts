@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 
 
@@ -8,6 +9,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
+  
+  cartList = new Subject();
+
+  sendcart(item: any) {
+    this.cartList.next(item)
+  }
   
 
   constructor(private http:HttpClient) { }

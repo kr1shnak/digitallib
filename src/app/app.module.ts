@@ -15,6 +15,9 @@ import { loginService } from './services/login/login.service';
 import { LoginComponent } from './components/login/login.component';
 import { RigistrationComponent } from './components/rigistration/rigistration.component';
 import { AuthGuard } from './gaurds/auth.guard';
+import { NewsComponent } from './components/news/news.component';
+import { MiniCartComponent } from './components/mini-cart/mini-cart.component';
+
 
 
 
@@ -29,7 +32,9 @@ import { AuthGuard } from './gaurds/auth.guard';
     FooterComponent,
     LoginComponent,
     RigistrationComponent,
-    NewbookComponent
+    NewbookComponent,
+    NewsComponent,
+    MiniCartComponent
   ],
   imports: [
     BrowserModule,
