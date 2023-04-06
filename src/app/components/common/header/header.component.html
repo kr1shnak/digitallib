@@ -4,7 +4,7 @@
         <div class="logo-block">
             <img src="assets/images/li.png" class="logo-img">
         </div>
-        
+
         <div class="nav nav-bar">
             <ul>
                 <li>
@@ -17,7 +17,7 @@
                 <li *ngIf="!userInfo?.username">
                     <a href="login">Login</a>
                 </li>
-                
+
                 <li *ngIf="userInfo?.username">
                     <a href="cart">Cart</a>
                 </li>
@@ -31,49 +31,48 @@
                     <a href="contact">Contact</a>
                 </li>
                 <li *ngIf="!userInfo?.username">
-                    <a  href="/regiter">registration</a>
-                
+                    <a href="/regiter">registration</a>
+
                 </li>
-                
-                
-               
-              
-           
-                 
-               
+
+
+
+
+
+
+
 
             </ul>
 
         </div>
-        <div *ngIf="userInfo?.username"    
-            
-                 class="dropdown">
-                    
-                   
-                <img [src]="userInfo.image"   class="user-img"   >
-            <span>{{userInfo.username}} <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                      
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="myprofile">my profile</a></li>
-                <li><a class="dropdown-item" href="mybookings">my bookings</a></li>
+        <div *ngIf="userInfo?.username" class="dropdown">
+            <img [src]="userInfo.image" class="user-img">
+            <span>{{userInfo.username}} <button type="button" class="btn btn-primary dropdown-toggle"
+                    data-bs-toggle="dropdown">
 
-                <li class="divider"></li>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="myprofile">my profile</a></li>
+                    <li><a class="dropdown-item" href="mybookings">my bookings</a></li>
 
-                <li *ngIf="userInfo?.username">
-                    <a  (click)="logout()">logout</a>
-                
-                </li>
+                    <li class="divider"></li>
 
-              </ul></span>
-       
+                    <li *ngIf="userInfo?.username">
+                        <a (click)="logout()">logout</a>
+
+                    </li>
+
+                </ul>
+            </span>
+
         </div>
         <div class="cart-icon-header">
-            <a  data-bs-toggle="dropdown" id="dropdownMenuButton" aria-expanded="false"><img src="assets/images/cart.png"  class="cart-img">
-            <sup class="cart-length">{{cartListInfo?.length}}</sup></a>
+            <a data-bs-toggle="dropdown" id="dropdownMenuButton" aria-expanded="false"><img src="assets/images/cart.png"
+                    class="cart-img">
+                <sup class="cart-length">{{cartListInfo?.length}}</sup></a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <app-mini-cart></app-mini-cart>
-            </div> 
+            </div>
         </div>
 
 

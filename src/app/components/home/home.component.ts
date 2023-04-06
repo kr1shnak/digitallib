@@ -13,13 +13,27 @@ export class HomeComponent implements OnInit{
   books$ : Observable<BooksInfo> | undefined
 
   products : any = []
+  images = [
+    "/assets/images/image3.jpg",
+    "/assets/images/image 4.jpg",
+    "/assets/images/image 5.jpg",
+    "/assets/images/image 6.jpg",
+    "/assets/images/image 7.jpg",
+  ]
+
+  status = [
+    'success',
+    'pending',
+    'return',
+    'cancel'
+  ]
   constructor(private service: ApiService ){
     
   }
-
+  
   ngOnInit(): void {
     this.loadBooks();
-   
+
   }
 
   loadBooks() { 
