@@ -3,14 +3,17 @@ import { Observable } from 'rxjs';
 import { BooksInfo } from 'src/app/models/digitallib-model';
 import { ApiService } from 'src/app/services/api.service';
 
+
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit{
   
-  books$ : Observable<BooksInfo> | undefined
+  books : any = []
 
   products : any = []
   images = [
@@ -20,6 +23,7 @@ export class HomeComponent implements OnInit{
     "/assets/images/image 6.jpg",
     "/assets/images/image 7.jpg",
   ]
+  DummyBooks = [];
 
   status = [
     'success',
@@ -27,6 +31,8 @@ export class HomeComponent implements OnInit{
     'return',
     'cancel'
   ]
+
+  filterBy: any
   constructor(private service: ApiService ){
     
   }
@@ -37,12 +43,25 @@ export class HomeComponent implements OnInit{
   }
 
   loadBooks() { 
-    this.books$ = this.service.getProductList()
+    this.service.getProductList().subscribe(res=>{
+      this.books = res.products
+      this.DummyBooks = res.products
+    })
   }
 
   addToCart(item:any):any{
     item.qty = 1;
     this.service.sendcart(item)
+  }
+
+  getSearchInfo(filter: any): void{
+    if(filter.sortBy){
+      let books = [...this.DummyBooks]
+      this.books = books.sort((a, b) => a[filter.sortBy] > b[filter.sortBy] ? 1 : -1)
+    }
+    else{
+      this.filterBy = filter
+    }
   }
     
   

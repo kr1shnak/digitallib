@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="row">
+            <div class="col-md-6">
+               <select class="form-control" [(ngModel)]="filter.filterBy"  (change)="searchEvent()">
+                    <option value="">---Filter By---</option>
+                    <option value="title">Name</option>
+                    <option value="price">Price</option>
+                    <option value="category">Brand</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <input type="search" *ngIf="filter.filterBy !== 'price'"  class="form-control" placeholder="search"  (change)="searchEvent()" [(ngModel)]="filter.search">
+                <input type="range" *ngIf="filter.filterBy == 'price'"  min="0" max="2000" class="form-control" placeholder="search"  (change)="searchEvent()" [(ngModel)]="filter.search">
+            </div>
+        </div>
+        
+        
+    </div>
+    <div class="col-md-6" >
+       <select class="form-control" [(ngModel)]="filter.sortBy"  (change)="searchEvent()">
+            <option value="">---Sort By---</option>
+            <option value="title">Name</option>
+            <option value="price">Price</option>
+            <option value="category">Brand</option>
+        </select>
+    </div>
+
+</div>
+

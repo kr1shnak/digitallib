@@ -17,6 +17,8 @@ import { RigistrationComponent } from './components/rigistration/rigistration.co
 import { AuthGuard } from './gaurds/auth.guard';
 import { NewsComponent } from './components/news/news.component';
 import { MiniCartComponent } from './components/mini-cart/mini-cart.component';
+import { FilterByComponent } from './components/common/filter-by/filter-by.component';
+import { MyFilterPipe } from './pipes/search.pipe';
 
 
 
@@ -34,7 +36,9 @@ import { MiniCartComponent } from './components/mini-cart/mini-cart.component';
     RigistrationComponent,
     NewbookComponent,
     NewsComponent,
-    MiniCartComponent
+    MiniCartComponent,
+    FilterByComponent,
+    MyFilterPipe
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ import { MiniCartComponent } from './components/mini-cart/mini-cart.component';
   ],
   providers: [
     loginService,
-    AuthGuard
+    AuthGuard,
+
   ],
   bootstrap: [AppComponent]
 })
